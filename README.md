@@ -57,7 +57,8 @@ brew cask install font-hack-nerd-font font-meslo-for-powerline font-fontawesome 
 
 
 ## Bash It
-```
+
+```bash
 git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it;
 ~/.bash_it/install.sh
 ```
@@ -68,37 +69,58 @@ Add to bash_profile
 
 ## Bash Completion
 ```brew install bash-completion```
+
 For it to work, add this to your ~/.bash_profile:
+```bash
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+```
+
 Or simply type:
-```echo "[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion" >> ~/.bash_profile```
+
+```bash
+echo "[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion" >> ~/.bash_profile
+```
 
 ## Install zsh and oh-my-zsh
-```brew install zsh```
-### Install oh-my-zsh
-```sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"```
-### Install powerlevel10k	
-```git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+
+```bash
+brew install zsh
 ```
-Set ZSH_THEME=powerlevel10k/powerlevel10k in your ~/.zshrc.
-run powerlevel10_prompt_configuration
+
+### Install oh-my-zsh
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
+
+### Install powerlevel10k	
+```bash
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+```
+
+Set `ZSH_THEME=powerlevel10k/powerlevel10k` in your ~/.zshrc.
+run `powerlevel10_prompt_configuration`
 
 https://sourabhbajaj.com/mac-setup/iTerm/zsh.html
 
 ### Zsh Plugins
+```bash
 plugins=(git colored-man colorize pip python brew osx zsh-syntax-highlighting zsh-autosuggestions)
+```
 
 ### prezto
-`git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto”`
+```bash
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto”
 ```
-$ setopt EXTENDED_GLOB
-$ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+
+```bash
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
     ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
   done
 ```
 
 
-## Extra 
+## Extras
 
 ### tree
 ```brew install tree```
@@ -117,27 +139,34 @@ $ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
 `brew install vim`
 
 ### awesome vim
+```bash
 git clone https://github.com/amix/vimrc.git ~/.vim_runtime
 sh ~/.vim_runtime/install_awesome_vimrc.sh
+```
+
 Alias for updating script
-```alias updatevimruntime='cd ~/.vim_runtime && git pull --rebase && cd -'```
+```bash
+alias updatevimruntime='cd ~/.vim_runtime && git pull --rebase && cd -'```
 
 ### maximum-awesome
+```bash
 git clone https://github.com/square/maximum-awesome.git
 cd maximum-awesome
 rake
+```
 
 ## Sublime
 install from dmg file backed up or
-```brew install caskroom/cask/brew-cask
+```bash
+brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
 brew cask install sublime-text
 ```
 
-```ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl```
+``ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl```
 
 ### Preferences
-```
+```json
 {
     "auto_complete_delay": 5,
     "auto_complete_selector": "source, text",
@@ -191,10 +220,11 @@ https://sourabhbajaj.com/mac-setup/SublimeText/SublimeLinter.html
 
 
 ## Install git
-`brew install git`
+$ `brew install git`
 
-```git config --global user.name “Christopher Chen”;
- git config --global user.email “chrichen@paypal.com”;
+```bash
+git config --global user.name “Christopher Chen”;
+git config --global user.email “chrichen@paypal.com”;
 ```
 
 ## Github
@@ -218,7 +248,7 @@ Run the following commands to add your SSH key to the ssh-agent.
 `eval "$(ssh-agent -s)"`
 
 If you're running macOS Sierra 10.12.2 or later, you will need to modify your ~/.ssh/config file to automatically load keys into the ssh-agent and store passphrases in your keychain:
-```
+```bash
 Host *
   AddKeysToAgent yes
   UseKeychain yes
@@ -237,10 +267,14 @@ Then go to GitHub and input your new SSH key. Paste your key in the "Key" textb
 ## Node and NPM via NVM 
 
 ### Install nvm 
-```curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash```
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
+```
 
 ### Install node
-```nvm install node; nvm install 8; nvm install 10;nvm install-latest-npm;nvm alias default node```
+```bash
+nvm install node; nvm install 8; nvm install 10;nvm install-latest-npm;nvm alias default node
+```
 
 ### .nvmrc
 You can create a .nvmrc file containing a node version number (or any other string that nvm understands; see nvm --help for details) in the project root directory (or any parent directory). Afterwards, nvm use, nvm install, nvm exec, nvm run, and nvm which will use the version specified in the .nvmrc file if no version is supplied on the command line.
@@ -265,14 +299,23 @@ The contents of a .nvmrc file must be the <version> (as described by nvm --help)
 ## Install java and maven
 https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 
-	1.8: ```brew cask install adoptopenjdk8```
-    latest: ```brew install java```
-	```brew install maven```
+1.8: 
+```bash 
+brew cask install adoptopenjdk8
+```
 
+latest: 
+```bash
+brew install java
+```
+
+```bash
+brew install maven
+```
 
 ## Install Kafka
 
-    ```brew install Kafka```
+```brew install Kafka```
 
 
 
@@ -285,8 +328,13 @@ import settings from repo
 
 
 ## VSCode
-```brew cask install visual-studio-code```
+```bash
+brew cask install visual-studio-code
+```
+
 Open the Command Palette (F1) and type 'shell command' to find the Shell Command: Install 'code' command in PATH command.
+
+use settings sync extension and download settings
 
 
 ## Install color schemes
@@ -305,7 +353,11 @@ https://apps.apple.com/us/app/lastpass/id926036361?ls=1&mt=12
 
 
 ## Spectacle
-```brew cask install spectacle```
+
+```bash
+brew cask install spectacle
+```
+
 * Update all major combinations to work with Shift + Control + 1-9
 * Remove the key combinations for the other sizes
 * System Preferences -> Security and Privacy -> Accessibility -> Check
