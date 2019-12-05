@@ -11,7 +11,10 @@ https://apps.apple.com/us/app/xcode/id497799835?mt=12
 
 ## Ruby via RVM
 Install rvm and ruby
-```\curl -sSL https://get.rvm.io | bash -s stable --autolibs=homebrew --rails```
+```bash
+\curl -sSL https://get.rvm.io | bash -s stable --autolibs=homebrew --rails
+```
+
 ```vm autolibs packages```
 
 ## Homebrew
@@ -35,13 +38,13 @@ backed up profiles from `~/Library/ApplicationSupport/Google/Chrome`
 go to `chrome://version/` in chrome and it will tell you which profile number the profile is for
 
 ## iTerm2
-```brew cask install iterm2```
-import settings from [here](./iterm/com.googlecode.iterm2.plist)
+1, ```brew cask install iterm2```  
+2. import settings from [here](./iterm/com.googlecode.iterm2.plist)
 
 
-### Fonts
+## Fonts
 
-```
+```bash
 brew tap
 adoptopenjdk/openjdk
 homebrew/cask
@@ -55,14 +58,13 @@ paypal/brewery
 brew cask install font-hack-nerd-font font-meslo-for-powerline font-fontawesome  font-menlo-for-powerline font-source-code-pro  
 ```    
 
-
 ## Bash It
 
 ```bash
 git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it;
 ~/.bash_it/install.sh
 ```
-Theme parrot
+Theme `parrot`
 
 Add to bash_profile
 `CLICOLOR=1`
