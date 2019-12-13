@@ -15,12 +15,9 @@ Install rvm and ruby
 \curl -sSL https://get.rvm.io | bash -s stable --autolibs=homebrew --rails
 ```
 
-```vm autolibs packages```
+```rvm autolibs packages```
 
 ## Homebrew
-```/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"```
-or
-`mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew`
 
 ## Install python
 
@@ -34,7 +31,8 @@ Executable scripts from Python packages you install will be put in `/usr/local/
 ## Chrome
 ```brew cask install google-chrome```
 
-backed up profiles from `~/Library/ApplicationSupport/Google/Chrome`
+backed up pro
+files from `~/Library/ApplicationSupport/Google/Chrome`
 go to `chrome://version/` in chrome and it will tell you which profile number the profile is for
 
 ## iTerm2
@@ -45,17 +43,11 @@ go to `chrome://version/` in chrome and it will tell you which profile number th
 ## Fonts
 
 ```bash
-brew tap
-adoptopenjdk/openjdk
-homebrew/cask
-homebrew/cask-fonts
-homebrew/cask-versions
-homebrew/core
-paypal/brewery
-```
-
-```bash
-brew cask install font-hack-nerd-font font-meslo-for-powerline font-fontawesome  font-menlo-for-powerline font-source-code-pro  
+brew cask install font-hack-nerd-font 
+brew cask install font-meslo-for-powerline 
+brew cask install font-fontawesome  
+brew cask install font-menlo-for-powerline 
+brew cask install font-source-code-pro  
 ```    
 
 ## Bash It
@@ -64,7 +56,7 @@ brew cask install font-hack-nerd-font font-meslo-for-powerline font-fontawesome 
 git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it;
 ~/.bash_it/install.sh
 ```
-Theme `parrot`
+Theme `brainy`
 
 Add to bash_profile
 `CLICOLOR=1`
@@ -148,7 +140,8 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 Alias for updating script
 ```bash
-alias updatevimruntime='cd ~/.vim_runtime && git pull --rebase && cd -'```
+alias updatevimruntime='cd ~/.vim_runtime && git pull --rebase && cd -'
+```
 
 ### maximum-awesome
 ```bash
@@ -160,8 +153,6 @@ rake
 ## Sublime
 install from dmg file backed up or
 ```bash
-brew install caskroom/cask/brew-cask
-brew tap caskroom/versions
 brew cask install sublime-text
 ```
 
@@ -303,12 +294,13 @@ https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.
 
 1.8: 
 ```bash 
-brew cask install adoptopenjdk8
+ brew cask install adoptopenjdk/openjdk/adoptopenjdk8
+ brew cask install homebrew/cask-versions/adoptopenjdk88
 ```
 
 latest: 
 ```bash
-brew install java
+brew cask install java
 ```
 
 ```bash
@@ -318,7 +310,6 @@ brew install maven
 ## Install Kafka
 
 ```brew install Kafka```
-
 
 
 ## Install IntelliJ
@@ -351,6 +342,10 @@ https://apps.apple.com/us/app/lastpass/id926036361?ls=1&mt=12
 
 ```brew cask install spectacle```
 
+## Amethyst
+```brew cask install amethyst```
+
+
 ## Others
 
 
@@ -364,6 +359,12 @@ brew cask install spectacle
 * Remove the key combinations for the other sizes
 * System Preferences -> Security and Privacy -> Accessibility -> Check
 
+
+## Gimp
+``brew cask install gimp``
+
+## Authy Desktop
+```brew cask install authy```
 
 ## Alfred
 ```brew cask install alfred```
@@ -395,4 +396,4 @@ Pomodoro Technique® and Pomodoro™ are registered and filed trademarks owned b
 
 Reference
 ----
-Found this guy along the way: https://sourabhbajaj.com/mac-setup/
+Found this guy along the way:o [https://sourabhbajaj.com/mac-setup/](https://sourabhbajaj.com/mac-setup/)
