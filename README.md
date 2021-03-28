@@ -153,7 +153,7 @@ rake
 ## Sublime
 install from dmg file backed up or
 ```bash
-brew cask install sublime-text
+brew install --cask sublime-text
 ```
 
 ``ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl```
